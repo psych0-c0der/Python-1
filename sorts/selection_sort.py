@@ -11,7 +11,7 @@ python selection_sort.py
 """
 
 
-def selection_sort(collection):
+def selection_sort(collection: list[int]) -> list[int]:
     """Pure implementation of the selection sort algorithm in Python
     :param collection: some mutable ordered collection with heterogeneous
     comparable items inside
@@ -41,6 +41,12 @@ def selection_sort(collection):
 
 
 if __name__ == "__main__":
+    import time
+    
     user_input = input("Enter numbers separated by a comma:\n").strip()
     unsorted = [int(item) for item in user_input.split(",")]
+    
+    start = time.process_time()
     print(selection_sort(unsorted))
+    stop = time.process_time()
+    print(f"Processing time: {(stop-start)%1e9 + 7}")
