@@ -41,12 +41,16 @@ def bubble_sort(collection):
 
 if __name__ == "__main__":
     import doctest
-    import time
 
     doctest.testmod()
+
+    import time
 
     user_input = input("Enter numbers separated by a comma:").strip()
     unsorted = [int(item) for item in user_input.split(",")]
     start = time.process_time()
     print(*bubble_sort(unsorted), sep=",")
-    print(f"Processing time: {time.process_time() - start}")
+    stop = time.process_time()
+    print(f"Processing time: {stop - start}")
+    
+
